@@ -40,7 +40,7 @@ const Count = () => {
 根據 [MDN 官網](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90)解釋，邏輯運算子通常被用於布林值的判斷，使用的符號有 `&&`、`||`、`!`，要注意的是在判斷會自動轉型，例如  null、0、undefined、NaN、空字串，都會被轉換成 false，看以下例子：
 
 ```js
-// 假設 && 前面的值為 true 的話，就回傳後面的值 
+// 假設兩個都是 true 的話，就回傳後面的值；如果不是就回傳 false 的那一個值
 const a = 'cat' && 'dog'; // 'dog'
 const b = true && false; // false
 const c = null && 1; // null
@@ -51,7 +51,7 @@ const g = '' && 'dog'; // '';
 ```
 
 ```js
-// 假設 || 前面的值為 true 的話，就回傳前面的值 
+// 假設兩個都是 true 的話，就回傳前面的值；如果不是就回傳 true 的那一個值
 const a = 'cat' || 'dog'; // 'cat'
 const b = true || false; // true
 const c = null || 1; // 1
