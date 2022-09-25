@@ -1,6 +1,6 @@
 ---
-title: 懶人必學的 Rust 迴圈
-date: 2022-09-26 00:20:53
+title: 重複的事就讓迴圈來吧
+date: 2022-09-26 00:56:53
 tags:
  - rust
 categories: 30 天快快樂樂學 Rust
