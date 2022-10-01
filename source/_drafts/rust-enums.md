@@ -1,5 +1,5 @@
 ---
-title: rust_enums
+title: rust-enums
 tags:
 ---
 

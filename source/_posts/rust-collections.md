@@ -1,6 +1,13 @@
 ---
-title: rust-collections
+title: Rust 的集合
+date: 2022-10-02 01:20:33
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - collections
+decription: Rust 的集合
 ---
 
 Rust 的標準函式庫有一些非常實用的資料結構，稱之為集合（collections）。這些集合包含了一些常見的資料結構，例如 vector、hash map、linked list 等等。這些集合都是泛型的，所以可以用來存放任何型別的資料。
@@ -129,3 +136,5 @@ for (key, value) in &scores {
 // Yellow: 50
 // Blue: 10
 ```
+
+以上就是集合的基本介紹，希望大家能對 Rust 有多一些的了解。
