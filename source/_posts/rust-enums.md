@@ -1,8 +1,14 @@
 ---
-title: rust-enums
+title: Rust 的枚舉
+date: 2022-10-03 01:20:18
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - enums
+decription: Rust 的特徵
 ---
-
 ## 枚舉（Enums）
 
 枚舉是一種定義一組可能值的方法，這些值被稱為成員（variants）。枚舉的每個成員都是一個獨立的類型，並且可以是不同類型的值，包括整數、浮點數、字符串、元組、數組、結構體等。
