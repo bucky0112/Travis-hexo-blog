@@ -1,6 +1,13 @@
 ---
-title: 19-rust_closures
+title: Rust 的閉包
+date: 2022-10-04 00:30:51
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - closure
+decription: Rust 的閉包
 ---
 
 ## 什麼是閉包（closure）？
