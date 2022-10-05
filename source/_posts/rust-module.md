@@ -1,7 +1,16 @@
 ---
-title: rust_module
+title: Rust 的模組
+date: 2022-10-06 00:20:53
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - module
+decription: Rust 的模組
 ---
+
+因為我們明天將會開始試著建立一個專案來玩玩看，但在此之前我們要先了解一下模組的概念。
 
 ## 什麼是模組（module）？
 
@@ -240,3 +249,5 @@ fn main() {
 ```
 
 這樣子就可以在 `main` 中呼叫 `add_to_waitlist` 了。
+
+以上就是模組的一些基本概念，希望大家對 Rust 又更了解了一些。
