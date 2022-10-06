@@ -1,6 +1,12 @@
 ---
-title: rust-day21
+title: 來用 Rust 建立一個伺服器吧！Part I
+date: 2022-10-07 01:26:21
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+decription: 用 Rust 建立一個伺服器
 ---
 
 從今天開始，我們要開始實作一個簡單的 HTTP 伺服器，並且複習一下並且運用我們之前學到 Rust 的知識，然後視情況加入一些需要了解的部分，到時候再加入解說，那麼就開始吧！
@@ -111,3 +117,5 @@ fn handle_connection(mut stream: TcpStream) {
 然後我們重新執行程式，並且把瀏覽器打開。雖然這時候瀏覽器一樣沒有畫面，但是我們可以在終端機看到請求的內容了：
 
 ![CleanShot 2022-10-04 at 02.33.56@2x](https://i.imgur.com/FddM6uI.png)
+
+今天我們已經先做了讀取請求的步驟，明天將會做發送 response 的部分。
