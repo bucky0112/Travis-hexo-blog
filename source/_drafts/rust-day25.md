@@ -98,3 +98,42 @@ impl Worker {
 }
 ```
 
+首先，從 `use` 引入的部分，我們引入了 `mpsc` 的 channel，這個 channel 會用來傳遞執行緒的工作，然後我們也引入了 `Arc` 和 `Mutex`，這兩個是用來做多執行緒的共享資源的。
+
+接下來，我們定義了一個 `Job` 的型別，這個型別是一個 `Box`，裡面放的是一個 `FnOnce` 的 trait，這個 trait 會用來定義執行緒的工作，然後我們會在 `execute` 方法中將這個 trait 傳遞給 channel。
+
+再來，我們在 `ThreadPool` 的結構中，新增了一個 `workers` 的向量，這個向量會儲存所有的執行緒，然後我們會在 `new` 方法中產生執行緒並儲存至向量中。
+
+接著，我們在 `new` 方法中，先建立一個 channel，然後我們會將 channel 的接收端傳入執行緒中，這樣執行緒就可以從 channel 中取得工作了。
+
+最後，我們在 `execute` 方法中，將工作傳遞給 channel。
+
+## 執行緒池的測試
+
+接下來，我們來測試一下我們的執行緒池。
+
+```rust
+// src/main.rs
+extern crate server;
+use std::io::prelude::*;
+use std::net::{TcpListener, TcpStream};
+use std::{fs, path::Path, thread, time::Duration};
+use server::ThreadPool;
+
+const PORT: i32 = 3000;
+const WORKER_SIZE: usize = 4; // 這裡設定執行緒數量
+
+fn main() {
+    let listener = TcpListener::bind(format!("127.0.0.1:{}", PORT)).unwrap();
+    let pool = ThreadPool::new(WORKER_SIZE);
+
+    for stream in listener.incoming() {
+        let stream = stream.unwrap();
+        pool.execute(|| { handle_connection(stream); });
+    }
+}
+
+// 省略...
+```
+
+現在當我們執行程式，並且在瀏覽器開啟多個分頁，我們可以透過終端機來觀察執行緒池的執行情況，並且可以發現，現在可以非同步處理多個連線，而且收到大量請求時，也不會因為執行緒不夠而導致無法回應。

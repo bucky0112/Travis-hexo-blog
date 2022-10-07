@@ -1,6 +1,12 @@
 ---
-title: rust-day23
+title: 來用 Rust 建立一個伺服器吧！Part II
+date: 2022-10-08 00:44:10
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+decription: 用 Rust 建立一個伺服器
 ---
 
 昨天我們成功讀取了 request，今天就繼續接著做，首先來處理發送 response 的部分。
