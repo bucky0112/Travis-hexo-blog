@@ -1,6 +1,12 @@
 ---
-title: rust-day24
+title: 來用 Rust 建立一個伺服器吧！Part III
+date: 2022-10-09 04:41:24
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+decription: 用 Rust 建立一個伺服器
 ---
 
 在開始建立多執行緒伺服器之前，我們先來模擬一下單一執行緒伺服器會遇到的問題。
