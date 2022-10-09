@@ -77,7 +77,7 @@ fn rocket() -> _ {
 
 ![CleanShot 2022-10-09 at 03.53.26@2x](https://i.imgur.com/FO7VQBG.png)
 
-最後我們來測試 `DELETE` 的方式：
+接著我們來測試 `DELETE` 的方式：
 
 這裡我用 Postman 在測試的時候，由於是假資料，所以沒辦法得知是否成功，所以我們這裡改用 `curl` 來測試：
 
@@ -89,6 +89,26 @@ $ curl 127.0.0.1:8000/demo/1 -X DELETE -I
 
 ![CleanShot 2022-10-09 at 04.20.04@2x](https://i.imgur.com/ghnNHkF.png)
 
+## catch error
+
+最後我們再做個如果開發者在打 API 時，輸入錯誤路徑的自定義錯誤訊息。
+
+```rust
+#[catch(404)]
+fn not_found() -> Value {
+    json!({ "status": "error", "reason": "Resource was not found." })
+}
+
+#[launch]
+fn rocket() -> _ {
+    let routes = routes![get_demo, view_demo, create_demo, update_demo, delete_demo];
+    rocket::build().mount("/", routes).register("/", catchers![not_found])
+}
+```
+
+這樣如果打錯 API 的話，就會出現我們剛剛定義的錯誤 JSON 訊息。
+
+![CleanShot 2022-10-09 at 19.01.11@2x](https://i.imgur.com/5IWXuYb.png)
 
 以下放上今天完整的程式碼：
 
@@ -124,9 +144,14 @@ fn delete_demo(id: i32) -> status::NoContent {
     status::NoContent
 }
 
+#[catch(404)]
+fn not_found() -> Value {
+    json!({ "status": "error", "reason": "Resource was not found." })
+}
+
 #[launch]
 fn rocket() -> _ {
     let routes = routes![get_demo, view_demo, create_demo, update_demo, delete_demo];
-    rocket::build().mount("/", routes)
+    rocket::build().mount("/", routes).register("/", catchers![not_found])
 }
 ```

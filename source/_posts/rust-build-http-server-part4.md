@@ -1,6 +1,12 @@
 ---
-title: rust-day25
+title: 來用 Rust 建立一個伺服器吧！Part IV
+date: 2022-10-10 01:03:43
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+decription: 用 Rust 建立一個伺服器
 ---
 
 昨天我們新增了一個檔案，專門來做執行緒池的部分，但還沒完成，所以今天就接著繼續完成。
