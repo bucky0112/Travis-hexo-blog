@@ -1,6 +1,13 @@
 ---
-title: rust-day26
+title: 來玩 Rust 的框架吧！ - Rocket - Part I
+date: 2022-10-11 01:10:50
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - rocket
+decription: Rust 的框架 Rocket
 ---
 
 今天開始我們將會開始使用 Rust 的 Web 框架 -- [Rocket](https://rocket.rs/)，來建立一個簡單的 Web Server。
@@ -131,3 +138,5 @@ fn rocket() -> _ {
 ```
 
 接著一樣重新執行，然後瀏覽器重新整理，就可以看到回傳的 JSON 了。
+
+今天就先到這邊，明天再繼續建立一個簡單 CRUD 的 API。
