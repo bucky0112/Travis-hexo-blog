@@ -1,6 +1,13 @@
 ---
-title: rust-day27
+title: 來玩 Rust 的框架吧！ - Rocket - Part II
+date: 2022-10-12 00:39:16
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - rocket
+decription: Rust 的框架 Rocket
 ---
 
 昨天我們用已經用 Rocket 建立了一個 server，並且可以接收回傳 JSON，今天就來了解一下怎麼使用 Rocket 建立一個 RESTful API。
@@ -155,3 +162,5 @@ fn rocket() -> _ {
     rocket::build().mount("/", routes).register("/", catchers![not_found])
 }
 ```
+
+今天就先到這邊，明天來做 token 驗證的功能。
