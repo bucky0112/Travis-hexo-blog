@@ -1,6 +1,13 @@
 ---
-title: rust-day28
+title: 來玩 Rust 的框架吧！ - Rocket - Part III
+date: 2022-10-13 01:31:13
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - rocket
+decription: Rust 的框架 Rocket
 ---
 
 我們今天要來做 Auth，一個基本的身分驗證功能，不想要讓任何人都可以隨便使用我們的 API。
@@ -124,3 +131,9 @@ fn get_demo(_auth: BasicAuth) -> Value {
 我們將 `Authorization` 的值改成 `Basic YnVja3k6YnVja3k=`，這個值是 `bucky:bucky` 這個字串進行 base64 編碼後的結果，我們把這個值當成 token 來驗證之後就可以成功取得資料了。
 
 接著就可以在所有的 methods 都加上 `BasicAuth`，這樣我們所有的 methods 都會進行驗證了。
+
+## 結論
+
+目前我們已經知道怎麼做出一個簡單 CRUD 的 API，然後也知道怎麼做出一個簡單的驗證。而在剩下的參賽天數內，我們要來玩一下其他的部分，明天我們要來玩一下 Yew 這個 Rust 的前端框架。
+
+而 Rocket 建立的 API 部分，我們會在之後的文章繼續完成，會做到跟資料庫的連線，還有部署的部分，所以如果有興趣的話，再請大家拭目以待。
