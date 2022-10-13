@@ -1,17 +1,25 @@
 ---
-title: rust-day29
+title: 用 Rust 來寫前端 - Yew
+date: 2022-10-14 00:31:42
 tags:
+ - rust
+categories: 30 天快快樂樂學 Rust
+keywords:
+ - rust
+ - yew
+ - webassembly
+decription: Rust 的框架 Rocket
 ---
 
 今天是我們一起學習 Rust 的第 29 天了，前面我們玩了很多後端的東西，今天我們來玩一下前端的東西吧！
 
 ## WebAssembly
 
-在開始之前，想先介紹一下 WebAssembly，它是一種可以在瀏覽器中執行的程式語言，它可以讓我們在瀏覽器中執行非常複雜的程式，而且它的執行速度也非常快，所以我們可以在瀏覽器中執行一些非常複雜的運算，而且不會影響到瀏覽器的體驗。
+在開始之前，想先介紹一下 WebAssembly，它是一種可以在瀏覽器中執行的程式語言，它可以讓我們在瀏覽器中執行非常複雜的程式，而且它的執行速度也非常快，所以我們可以在瀏覽器中執行一些比較複雜的運算，而不會影響到瀏覽器的體驗。
 
 ## Yew
 
-Yew 是一個可以讓我們在 Rust 中使用 WebAssembly 的框架，它可以讓我們在 Rust 中撰寫前端的程式，並且可以編譯成 WebAssembly，讓我們在瀏覽器中執行。
+[Yew](https://yew.rs/) 是一個可以讓我們在 Rust 中使用 WebAssembly 的框架，它可以讓我們在 Rust 中撰寫前端的程式，並且可以編譯成 WebAssembly，讓我們在瀏覽器中執行。
 
 ## 安裝 Yew
 
@@ -155,3 +163,7 @@ impl Component for Model {
 ```
 
 這樣就完成一個用 Yew 寫的 App 了！
+
+![CleanShot 2022-10-14 at 00.21.36](https://i.imgur.com/ibz0XCZ.gif)
+
+大家如果有興趣的話，可以參考我的 [GitHub repo](https://github.com/bucky0112/yew_calculator) 來玩玩看。

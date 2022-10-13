@@ -1,7 +1,12 @@
 ---
 title: rust-day29
+date: 2022-10-14 00:29:31
 tags:
+categories:
+keywords:
+decription:
 ---
+
 
 目前為止我們都是使用模擬的資料，但是我們的 API 會需要真實的資料，所以今天我們要來做一個簡單的資料庫。
 
