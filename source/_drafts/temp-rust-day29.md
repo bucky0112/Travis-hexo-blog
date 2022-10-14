@@ -149,22 +149,12 @@ fn get_demo(_auth: BasicAuth, _conn: DbConn) -> Value {
 接下來我們要來建立 Model，在 `src` 中新增一個 `models.rs`，裡面的程式碼如下：
 
 ```rust
-use super::schema::rustaceans;
-
-#[derive(serde::Serialize, serde::Deserialize, Queryable, AsChangeset)]
-pub struct Rustacean {
+#[derive(Queryable)]
+pub struct Demo {
     pub id: i32,
     pub name: String,
     pub email: String,
-    #[serde(skip_deserializing)]
     pub created_at: String,
-}
-
-#[derive(Insertable, serde::Deserialize)]
-#[table_name="rustaceans"]
-pub struct NewRustacean {
-    pub name: String,
-    pub email: String,
 }
 ```
 
@@ -184,3 +174,44 @@ diesel::table! {
 接著在 `main.rs` 帶入 Models 和 Schema：
 
 ```rust
+// 省略...
+mod auth;
+mod models;
+mod schema;
+
+use diesel::prelude::*;
+use auth::BasicAuth;
+use models::*;
+use schema::*;
+use rocket::response::status;
+use rocket::serde::json::{json, Json, Value};
+
+#[database("sqlite_path")]
+struct DbConn(diesel::SqliteConnection);
+
+#[get("/demo")]
+async fn get_demo(_auth: BasicAuth, conn: DbConn) -> Value {
+    conn.run(|c| {
+        let all = demo::table.limit(100).load::<Demo>(c).expect("Error loading demo");
+        json!(all)
+    })
+    .await
+}
+```
+
+這時候會發現 `json!(all)` 會有錯誤，但不確定是什麼問題，我們可以先執行 `cargo run`，然後再來看看錯誤訊息：
+
+![CleanShot 2022-10-14 at 01.22.54@2x](https://i.imgur.com/kTdcWCJ.png)
+
+仔細看一下錯誤訊息，可以發現在 `models::Demo` 中，缺少了 `Serialize`，所以我們要在 `models.rs` 中加上 `Serialize`：
+
+```rust
+#[derive(serde::Serialize, Queryable)]
+```
+
+這時候再執行一次 `cargo run`，就可以正常執行了。
+然後用 Postman 測試一下：
+
+![CleanShot 2022-10-14 at 01.35.05@2x](https://i.imgur.com/ISII8Dg.png)
+
+可以發現目前拿到的是空陣列，代表我們設定 OK 了。
