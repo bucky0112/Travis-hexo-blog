@@ -76,6 +76,12 @@ test("it shows one inputs and a button", () => {
 
 然後，定義了一個名為 "it shows one inputs and a button" 的測試案例。這裡也可以用中文，只要方便測試者閱讀就好。這個案例使用 `render` 將 "Form" 組件渲染到測試環境中，然後使用 `screen.getAllByRole` 和 `screen.getByRole` 尋找頁面上的輸入框和按鈕元素。
 
+那麼 `getAllByRole` 和 `getByRole` 有什麼差別呢？
+
+如果要尋找多個元素，可以使用 `getAllByRole`，如果只要尋找一個元素，可以使用 `getByRole`。
+
+雖然這裡都可以使用，但嚴格來說，應該要使用 `getByRole` 才是比較正確的用法，但這裡只是要展示這兩種都可以使用，所以下次要使用的話，可以根據自己的需求來選擇。
+
 最後，它使用 `expect` 函式，也就是斷言來檢查文本框的數量是否為 1，以及按鈕是否存在於頁面上。如果這些斷言都通過了，則代表這個測試案例成功；否則，這個測試案例將失敗。
 
 然後在終端機中執行 `npm test` 或是 `yarn test`，就可以看到測試結果了。
