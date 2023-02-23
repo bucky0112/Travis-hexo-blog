@@ -1,5 +1,5 @@
 ---
-title: react-native-calculator
+title: React Native x Expo x TypeScript 實作計算機 
 date: 2023-02-24 00:58:20
 tags:
  - react-native
