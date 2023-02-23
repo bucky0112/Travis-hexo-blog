@@ -1,9 +1,20 @@
 ---
 title: react-native-calculator
+date: 2023-02-24 00:58:20
 tags:
+ - react-native
+ - expo
+ - typescript
+categories:
+  - React Native
+keywords:
+  - react-native
+  - expo
+  - typescript
+decription: 讓我們來用 React Native 和 Expo，還有 TypeScript 來寫一個計算機手機 App 吧！
 ---
 
-讓我們來用 React Native 和 Expo 來寫一個計算機手機 App 吧！
+讓我們來用 React Native 和 Expo，還有 TypeScript 來寫一個計算機手機 App 吧！
 
 ## 什麼是 React Native?
 
