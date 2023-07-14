@@ -641,8 +641,8 @@ subtitle:
   # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
   # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
   sub:
-    - 一個喜歡寫 code 的阿宅&#44;希望能一直寫下去
-    - Wellcome to Bucky's f2e bucket
+    - 滑板愛好者，軟體工程師，貓奴一枚。
+    - 🛹💻🐱
 
 # Loading Animation (加載動畫)
 preloader: false

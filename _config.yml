@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Bucky's f2e bucket
-subtitle: 巴奇的前端桶
-description: 巴奇的前端桶
-keywords: 前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,JavaScript,HTML,CSS,SCSS
+title: Bucky's Code Journey
+subtitle: Exploring the World of Coding, One Line at a Time
+description: Join Bucky Chu on his journey through the realms of front-end, back-end, and full-stack development.
+keywords: 前端,後端,全端,網頁,技術,網頁開發,前端開發,後端開發,JavaScript,HTML,CSS,SCSS,rust,react,vue,reactnative
 author: Bucky Chu
 language: zh-TW
-timezone: ''
+timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
