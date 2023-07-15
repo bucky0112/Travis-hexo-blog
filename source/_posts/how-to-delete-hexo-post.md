@@ -19,7 +19,7 @@ decription: 如何刪除 Hexo 已發佈的文章
 1. 直接在 `source/_post` 資料夾中刪除文章。
 2. 在終端機執行 `hexo clean`，並在根目錄下刪除 `db.json`。
 3. 執行 `hexo generate` 或是 `hexo g`。
-4. 執行 `hexo hexo deploy` 或是 `hexo d` 重新發佈。
+4. 執行 `hexo deploy` 或是 `hexo d` 重新發佈。
 
 其實還蠻簡單的，只是官方文件找不到這個方法蠻意外的。
 
