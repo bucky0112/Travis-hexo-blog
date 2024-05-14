@@ -16,7 +16,7 @@ top_img: https://i.imgur.com/ZFWUjPq.jpeg
 
 ## useTransition
 
-在前端操作中，經常會碰到非同步的執行，例如：使用者點擊按鈕後，需要等待 API 回傳資料後再處理下一步的動作。
+在前端操作中，經常會碰到需要更新狀態的情況，例如：使用者點擊按鈕後，需要更新 UI 來響應這個操作。然而，有些狀態更新可能計算量較大或者涉及非同步操作，執行時間較長。
 
 以下是一個範例，當使用者輸入名字後，點擊按鈕，會呼叫 API 更新名字，並且在更新過程中，按鈕會變成不可點擊的狀態。`updateNameAPI` 這個函式會模擬 API 的行為。
 
@@ -65,7 +65,7 @@ const Pending = () => {
 
 可以看到，這段程式碼中，我們使用了三個 `useState` 來管理狀態，並且在 `handleSubmit` 中，使用 `setIsPending` 來控制按鈕是否可點擊，以及在 API 回傳錯誤時，使用 `setError` 來顯示錯誤訊息。
 
-在 React 19 中，我們可以使用 `useTransition` 來簡化這段程式碼：
+`useTransition` 這個 hook 已經不是新東西了，它在 React 18 中就已經出現，但在 React 19 中，它被進一步改進，讓我們更容易地處理非同步操作。
 
 ```jsx!
 import { useState, useTransition } from 'react'
@@ -75,8 +75,8 @@ const Pending = () => {
   const [error, setError] = useState(null)
   const [isPending, startTransition] = useTransition()
 
-  const handleSubmit = async () => {
-    startTransition(async () => { // 使用startTransition包裹非同步操作
+  const handleSubmit = () => {
+    startTransition(async () => { // 使用 startTransition 包裹非同步操作
       const error = await updateNameAPI(name)
       if (error) {
         setError(error)
